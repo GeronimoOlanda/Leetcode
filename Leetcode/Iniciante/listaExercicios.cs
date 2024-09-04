@@ -35,5 +35,32 @@ namespace Leetcode.Iniciante
             return new int[0];
         }
         #endregion
+
+        #region Exercicio: 2 - Palindromo Numero
+        public class Solution
+        {
+            public bool IsPalindrome(int x)
+            {
+                var valor = 0;
+
+                if (x < 0) return false; // valor negativo nao pode ser palintromo
+
+                var s = x.ToString(); //convertemos para string para pega o tamanho dela
+                var tamanho = s.Length;
+                //O loop percorre a string comparando os caracteres da esquerda para a direita com os caracteres da direita para a esquerda
+                for (var i = 0; i < tamanho / 2; i++)
+                {
+                    //
+                    if (s[i] != s[tamanho - 1 - i])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+
+            }
+        }
+
+        #endregion
     }
 }
